@@ -1,44 +1,53 @@
 <form [formGroup]="userForm">
-  <label>
-    First Name:
-    <input type="text" formControlName="firstName" required>
-  </label>
-
-  <label>
-    Last Name:
-    <input type="text" formControlName="lastName">
-  </label>
-
-  <div formGroupName="address">
-    <h3>Address</h3>
-
+  <div>
     <label>
-      Street:
-      <input type="text" formControlName="street">
-    </label>
-
-    <label>
-      City:
-      <input type="text" formControlName="city">
-    </label>
-
-    <label>
-      State:
-      <input type="text" formControlName="state">
-    </label>
-
-    <label>
-      Zip Code:
-      <input type="text" formControlName="zip">
+      First Name:
+      <input type="text" formControlName="firstName" required>
     </label>
   </div>
+  <br>
+  <div>
+    <label>
+      Last Name:
+      <input type="text" formControlName="lastName">
+    </label>
+  </div>
+  <br>
 
-  <button type="submit" [disabled]="!userForm.valid">Submit</button>
+  <div formGroupName="address">
+
+    <h3>Address</h3>
+    <div>
+      <label>
+        Street:
+        <input type="text" formControlName="street">
+      </label>
+    </div>
+    <br>
+
+    <div>
+      <label>
+        City:
+        <input type="text" formControlName="city">
+      </label>
+    </div>
+    <br>
+
+    <div>
+      <label>
+        State:
+        <input type="text" formControlName="state">
+      </label>
+    </div>
+    <br>
+    <div>
+      <label>
+        Zip Code:
+        <input type="text" formControlName="zip">
+      </label>
+    </div>
+    <br>
+  </div>
+
+  <button type="submit" [disabled]="!userForm.valid" (click)="updateUserProfile()">Submit</button>
 </form>
-
-<hr>
-
-<p>
-  <button (click)="updateUserProfile()">Update Profile</button>
-</p>
-

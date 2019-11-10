@@ -14,6 +14,8 @@ export class ReactiveFormsComponent implements OnInit {
   }
 
   ngOnInit() {
+    const userDetails = {}
+
   }
 
   updateUserProfile() {
