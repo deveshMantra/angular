@@ -28,3 +28,9 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## What all this repository contains
+It contains the following basic example
+1) Template driven forms - /templateDrivenForms use the above 
+route to understand the template driven forms
+

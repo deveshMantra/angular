@@ -1,0 +1,9 @@
+:host(.active) {
+  display: block;
+  border: 5px solid red;
+}
+
+:host {
+  display: block;
+  border: 1px solid black;
+}
