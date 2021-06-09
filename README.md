@@ -1,6 +1,15 @@
 # Angular 2 +
-This repository contains the information about the information of all the basic angular application
-You can find the basic angular implementations.
+This repository can be used as starter app for angular.
+The folder structure and other things are already there in the repository.
+following things are already setup in the repository 
+modules
+config servies
+api service
+lodash
+rxjs
+loader
+toaster messages
+Auth guard
 
 # How to Setup
 Clone the repository.
