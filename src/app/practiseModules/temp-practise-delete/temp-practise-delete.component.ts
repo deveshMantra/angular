@@ -14,6 +14,8 @@ export class TempPractiseDeleteComponent implements OnInit {
 
   constructor() {
   }
+  title = "Delete component title";
+  content = "Content from delete component"
 
   onFocus() {
     console.log('focussed');

@@ -27,6 +27,14 @@ import {TempPractiseDeleteComponent} from './practiseModules/temp-practise-delet
 import {ChiltemppractiseDeleteComponent} from './practiseModules/temp-practise-delete/chiltemppractise-delete/chiltemppractise-delete.component';
 import {ChildRoutesComponent} from './practiseModules/child-routes/child-routes.component';
 import {ChildRComponent} from './practiseModules/child-routes/child-r/child-r.component';
+import { LanguageTranslationComponent } from './practiseModules/language-translation/language-translation.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { I18nModule } from './i18n/i18n.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ToastrModule } from 'ngx-toastr';
+import { SharedModule} from './modules/shared/shared.module'
+
+import { ToastMessageExampleComponent } from './practiseModules/toast-message-example/toast-message-example.component';
 
 @NgModule({
   declarations: [
@@ -51,13 +59,21 @@ import {ChildRComponent} from './practiseModules/child-routes/child-r/child-r.co
     TempPractiseDeleteComponent,
     ChiltemppractiseDeleteComponent,
     ChildRoutesComponent,
-    ChildRComponent
+    ChildRComponent,
+    LanguageTranslationComponent,
+    ToastMessageExampleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule,
+    I18nModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    SharedModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

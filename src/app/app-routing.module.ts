@@ -15,8 +15,19 @@ import {TempPractiseDeleteComponent} from './practiseModules/temp-practise-delet
 import {ChildRoutesComponent} from './practiseModules/child-routes/child-routes.component';
 import {ChildRComponent} from './practiseModules/child-routes/child-r/child-r.component';
 import {ReactiveFormsComponent} from "./practiseModules/forms/reactive-forms/reactive-forms.component";
+import {LanguageTranslationComponent} from "./practiseModules/language-translation/language-translation.component"
+import { ToastMessageExampleComponent } from './practiseModules/toast-message-example/toast-message-example.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    children: [
+      {
+        path: 'auth',
+        loadChildren: () => import('./modules/authentication/authentication.module').then(module => module.AuthenticationModule)
+      }
+    ]
+  },
   {path: 'keyEnter', component: CommunicationComponent},
   {path: 'parentToChildDataBind', component: ParentToChildDataBindComponent},
   {path: 'interCept', component: InterceptSetterComponent},
@@ -28,6 +39,8 @@ const routes: Routes = [
   {path: 'templateDrivenForms', component: TemplateDriveFormsComponent},
   {path: 'reactiveForms', component: ReactiveFormsComponent},
   {path: 'delete', component: TempPractiseDeleteComponent},
+  {path: 'language-translate', component: LanguageTranslationComponent},
+  {path: 'toast-example', component: ToastMessageExampleComponent},
   {
     path: 'childRoute', component: ChildRoutesComponent,
     children: [

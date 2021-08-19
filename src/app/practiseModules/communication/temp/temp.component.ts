@@ -8,7 +8,7 @@ import {ChildTempComponent} from './child-temp/child-temp.component';
   styleUrls: ['./temp.component.css']
 })
 export class TempComponent implements OnInit {
-  @ViewChild(ChildTempComponent)
+  @ViewChild(ChildTempComponent, { static: true })
   private timerComponent: ChildTempComponent;
 
   start() {
