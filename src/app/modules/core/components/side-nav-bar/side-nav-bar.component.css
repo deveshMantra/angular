@@ -1,0 +1,10 @@
+.side-nav-bar{
+  height: 100%;
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+.sidebar{
+  height: 100vh;
+  background-color: lightblue;
+}
+
