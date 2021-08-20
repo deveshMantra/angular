@@ -17,16 +17,12 @@ import {ChildRComponent} from './practiseModules/child-routes/child-r/child-r.co
 import {ReactiveFormsComponent} from "./practiseModules/forms/reactive-forms/reactive-forms.component";
 import {LanguageTranslationComponent} from "./practiseModules/language-translation/language-translation.component"
 import { ToastMessageExampleComponent } from './practiseModules/toast-message-example/toast-message-example.component';
+import { AuthGuard} from './auth.guard'
 
 const routes: Routes = [
   {
     path: '',
-    children: [
-      {
-        path: 'auth',
-        loadChildren: () => import('./modules/authentication/authentication.module').then(module => module.AuthenticationModule)
-      }
-    ]
+    loadChildren: () => import('./modules/authentication/authentication.module').then(module => module.AuthenticationModule)
   },
   {path: 'keyEnter', component: CommunicationComponent},
   {path: 'parentToChildDataBind', component: ParentToChildDataBindComponent},
@@ -39,8 +35,8 @@ const routes: Routes = [
   {path: 'templateDrivenForms', component: TemplateDriveFormsComponent},
   {path: 'reactiveForms', component: ReactiveFormsComponent},
   {path: 'delete', component: TempPractiseDeleteComponent},
-  {path: 'language-translate', component: LanguageTranslationComponent},
-  {path: 'toast-example', component: ToastMessageExampleComponent},
+  {path: 'language-translate', component: LanguageTranslationComponent,canActivate: [AuthGuard]},
+  {path: 'toast-example', component: ToastMessageExampleComponent, canActivate: [AuthGuard]},
   {
     path: 'childRoute', component: ChildRoutesComponent,
     children: [
