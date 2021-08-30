@@ -10,6 +10,9 @@ import { SideNavBarComponent } from './components/side-nav-bar/side-nav-bar.comp
   declarations: [HeaderComponent, FooterComponent, SideNavBarComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  /* exports: [
+    SideNavBarComponent
+  ] */
 })
 export class CoreModule { }
