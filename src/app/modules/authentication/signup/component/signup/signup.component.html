@@ -4,7 +4,17 @@
       <h2 style="color: tomato">Please Sign Up</h2>
     </div>
     <div class="col-6">
-      <form>
+      <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">First Name</label>
+          <input type="email" formControlName="firstName" class="form-control" aria-describedby="emailHelp">
+
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Last Name</label>
+          <input type="email" formControlName="LastName" class="form-control" aria-describedby="emailHelp">
+
+        </div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
           <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -18,10 +28,14 @@
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button [disabled]="signUpForm.invalid" type="submit" class="btn btn-primary">Sign up</button>
       </form>
     </div>
     <div class="col-6"></div>
   </div>
+  <p href="#" class="sm-text mx-auto mt-3">
+    Already have an account?
+    <button class="btn btn-outline-info ms-4 px-5" [routerLink]="['/signin']">Sign in</button>
+  </p>
 </div>
 
