@@ -1,0 +1,8 @@
+{
+  "URLS": {
+    "USER": {
+      "SIGNUP": "auth/signup",
+      "SIGNIN": "auth/signin"
+    }
+  }
+}

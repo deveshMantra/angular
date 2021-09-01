@@ -1,32 +1,35 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ConfigService } from '../config/config.service';
+import { DataService } from '../data/data.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  /**
-  * Contains base Url for api end points
-  */
-  baseUrl = environment.baseUrl;
-  /**
-   * angular HttpClient
-   */
-  http: HttpClient;
 
-  constructor(http: HttpClient) {
-    this.http = http;
+  constructor(private configService: ConfigService
+    , private dataService: DataService) {
+
   }
   /**
    * Creates user
    */
-  async createUser(body) {
-    console.log("In create user service", body)
-    return this.http.post(environment.baseUrl + 'auth' + '/signup', body, { observe: 'response' })
+  async createUser(requestBody) {
+    const request = {
+      url: this.configService.urlConfig.default.URLS.USER.SIGNUP,
+      data: requestBody
+    };
+    return this.dataService.postWithHeaders(request);
   }
-  async signIn(body) {
-    console.log("In create user service", body)
-    return this.http.post(environment.baseUrl + 'auth' + '/signin', body, { observe: 'response' })
+  async signIn(requestBody) {
+    const request = {
+      url: this.configService.urlConfig.default.URLS.USER.SIGNIN,
+      data: requestBody
+    };
+    console.log("In create user service", request);
+    return this.dataService.postWithHeaders(request);
+    // return this.http.post(environment.baseUrl + this.configService.urlConfig.default.URLS.USER.SIGNIN, body, { observe: 'response' })
   }
 }
