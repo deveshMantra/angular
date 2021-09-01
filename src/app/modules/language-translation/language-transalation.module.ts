@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LanguageSelectionComponent } from './components/language-selection/language-selection.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 
 
 
 @NgModule({
-  declarations: [LanguageSelectionComponent],
+  declarations: [LanguageSelectorComponent],
   imports: [
-    CommonModule
-  ]
+    CommonModule, TranslateModule
+  ],
+  exports: [LanguageSelectorComponent]
 })
 export class LanguageTranslationModule { }

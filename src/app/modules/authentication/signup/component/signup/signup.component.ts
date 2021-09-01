@@ -33,6 +33,7 @@ export class SignupComponent implements OnInit {
     (await this.userService.createUser(requestBody)).subscribe(async data => {
       console.log("Create user", data);
       if (data.status == 200) {
+        this.router.navigate(['/signin']);
         this.toastService.showSuccess('Successful!', 'Sign in successfully');
       }
       else {

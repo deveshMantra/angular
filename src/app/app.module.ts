@@ -30,11 +30,11 @@ import {ChildRComponent} from './practiseModules/child-routes/child-r/child-r.co
 import { LanguageTranslationComponent } from './practiseModules/language-translation/language-translation.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { I18nModule } from './i18n/i18n.module';
+import { TranslateModule } from '@ngx-translate/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ToastrModule } from 'ngx-toastr';
 import { SharedModule} from './modules/shared/shared.module';
-import {CoreModule} from './modules/core/core.module'
-
+import {CoreModule} from './modules/core/core.module';
 import { ToastMessageExampleComponent } from './practiseModules/toast-message-example/toast-message-example.component';
 
 @NgModule({
@@ -73,6 +73,7 @@ import { ToastMessageExampleComponent } from './practiseModules/toast-message-ex
     I18nModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    TranslateModule.forRoot(),
     SharedModule,
     CoreModule
 

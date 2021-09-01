@@ -1,41 +1,44 @@
 <div class="container">
+  <div class="container d-flex justify-content-end">
+    <app-language-selector></app-language-selector>
+  </div>
   <div class="row">
     <div class="col-12 mt-5">
-      <h2 style="color: tomato">Please Sign Up</h2>
+      <h2 style="color: tomato">{{'Please Sign Up' | translate}}</h2>
     </div>
     <div class="col-6">
       <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">First Name</label>
+          <label for="exampleInputEmail1" class="form-label">{{'First Name' | translate}}</label>
           <input type="email" formControlName="firstName" class="form-control" aria-describedby="emailHelp">
 
         </div>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Last Name</label>
+          <label for="exampleInputEmail1" class="form-label">{{'Last Name' | translate}}</label>
           <input type="email" formControlName="LastName" class="form-control" aria-describedby="emailHelp">
 
         </div>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <label for="exampleInputEmail1" class="form-label">{{'Email address' | translate}}</label>
           <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          <div id="emailHelp" class="form-text">{{'We ll never share your email with anyone else.' | translate}}</div>
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <label for="exampleInputPassword1" class="form-label">{{'Password' | translate}}</label>
           <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1">
         </div>
         <div class="mb-3 form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          <label class="form-check-label" for="exampleCheck1">{{'Check me out' | translate}}</label>
         </div>
-        <button [disabled]="signUpForm.invalid" type="submit" class="btn btn-primary">Sign up</button>
+        <button [disabled]="signUpForm.invalid" type="submit" class="btn btn-primary">{{'Sign up' | translate}}</button>
       </form>
     </div>
     <div class="col-6"></div>
   </div>
   <p href="#" class="sm-text mx-auto mt-3">
-    Already have an account?
-    <button class="btn btn-outline-info ms-4 px-5" [routerLink]="['/signin']">Sign in</button>
+   {{'Already have an account?' | translate}}
+    <button class="btn btn-outline-info ms-4 px-5" [routerLink]="['/signin']">{{'Sign In' | translate}}</button>
   </p>
 </div>
 

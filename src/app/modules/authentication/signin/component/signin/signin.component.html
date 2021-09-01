@@ -1,32 +1,35 @@
+<div class="container d-flex justify-content-end">
+  <app-language-selector></app-language-selector>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-12 mt-5">
-      <h2 style="color: tomato">Please Login</h2>
+      <h2 style="color: tomato">{{'Please Sign in' | translate}}</h2>
     </div>
     <div class="col-6">
       <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <label for="exampleInputEmail1" class="form-label">{{'Email address' | translate}}</label>
           <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          <div id="emailHelp" class="form-text">{{'We ll never share your email with anyone else.' | translate}}</div>
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <label for="exampleInputPassword1" class="form-label">{{'Password' | translate}}</label>
           <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1">
         </div>
         <div class="mb-3 form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          <label class="form-check-label" for="exampleCheck1">{{'Check me out' | translate}}</label>
         </div>
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button type="submit" class="btn btn-primary">{{'Sign In' | translate}}</button>
       </form>
     </div>
     <div class="col-6"></div>
   </div>
   <div class="bottommb-5">
     <p href="#" class="sm-text mx-auto mt-3">
-      Don't have an account?
-      <button class="btn btn-outline-danger ms-4 px-5" [routerLink]="['/signup']">Create new</button>
+     {{"Dont have an account?" | translate}}
+      <button class="btn btn-outline-danger ms-4 px-5" [routerLink]="['/signup']"> {{"Create new" | translate}}</button>
     </p>
 </div>
 </div>
