@@ -21,12 +21,15 @@
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">{{'Check me out' | translate}}</label>
         </div>
-        <button type="submit" class="btn btn-primary">{{'Sign In' | translate}}</button>
+        <button [disabled]="signInForm.invalid" type="submit" class="btn btn-primary">{{'Sign In' | translate}}</button>
       </form>
     </div>
     <div class="col-6"></div>
   </div>
   <div class="bottommb-5">
+    <p class="sm-text mx-auto mt-3">
+     <a [routerLink]="['/reset-password']">Forgotten Password?</a>
+    </p>
     <p href="#" class="sm-text mx-auto mt-3">
      {{"Dont have an account?" | translate}}
       <button class="btn btn-outline-danger ms-4 px-5" [routerLink]="['/signup']"> {{"Create new" | translate}}</button>

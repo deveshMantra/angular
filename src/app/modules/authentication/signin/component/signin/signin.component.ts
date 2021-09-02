@@ -14,8 +14,8 @@ export class SigninComponent implements OnInit {
   constructor(private router: Router, private userService: UserService, private toastService: ToastService) { }
 
   signInForm = new FormGroup({
-    email: new FormControl(),
-    password: new FormControl()
+    email: new FormControl('', [Validators.required, Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]),
+    password: new FormControl("", [Validators.required])
   });
 
   ngOnInit(): void {
@@ -32,8 +32,12 @@ export class SigninComponent implements OnInit {
       if (data.status == 200) {
         this.toastService.showSuccess('Successful!', 'Sign in successfully');
       }
-      else{
+      else if (data.status == 400) {
+        this.toastService.showWarning('Please choose Another password', 'Password should AlphaNumeric');
+      }
+      else {
         this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');
+
       }
     }, (error) => {
       this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');

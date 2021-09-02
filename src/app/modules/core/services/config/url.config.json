@@ -2,7 +2,9 @@
   "URLS": {
     "USER": {
       "SIGNUP": "auth/signup",
-      "SIGNIN": "auth/signin"
+      "SIGNIN": "auth/signin",
+      "RESETPASSWORD": "auth/forget/password",
+      "SETNEWPASSWORD": "auth/forget/password/set/password"
     }
   }
 }

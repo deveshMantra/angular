@@ -34,9 +34,13 @@ export class SignupComponent implements OnInit {
       console.log("Create user", data);
       if (data.status == 200) {
         this.router.navigate(['/signin']);
-        this.toastService.showSuccess('Successful!', 'Sign in successfully');
+        this.toastService.showSuccess('Successful!', 'Sign up successfully');
+      }
+      else if(data.status == 400){
+        this.toastService.showWarning('Please choose Another password', 'Password should AlphaNumeric');
       }
       else {
+        this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');
 
       }
     }, (error) => {

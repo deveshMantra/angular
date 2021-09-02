@@ -32,4 +32,27 @@ export class UserService {
     return this.dataService.postWithHeaders(request);
     // return this.http.post(environment.baseUrl + this.configService.urlConfig.default.URLS.USER.SIGNIN, body, { observe: 'response' })
   }
+
+  /*
+  * Creates Resets Password request
+  */
+  async resetPassword(requestBody) {
+    const request = {
+      url: this.configService.urlConfig.default.URLS.USER.RESETPASSWORD,
+      data: requestBody
+    };
+    console.log("In create user service to create reset password request", request);
+    return this.dataService.postWithHeaders(request);
+  }
+  /*
+  * Sets new Password for User
+  */
+  async setNewPassword(requestBody) {
+    const request = {
+      url: this.configService.urlConfig.default.URLS.USER.SETNEWPASSWORD,
+      data: requestBody
+    };
+    console.log("In create user service To set new Password", request);
+    return this.dataService.postWithHeaders(request);
+  }
 }
