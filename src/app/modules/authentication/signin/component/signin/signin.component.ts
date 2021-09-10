@@ -32,15 +32,17 @@ export class SigninComponent implements OnInit {
       if (data.status == 200) {
         this.toastService.showSuccess('Successful!', 'Sign in successfully');
       }
-      else if (data.status == 400) {
-        this.toastService.showWarning('Please choose Another password', 'Password should AlphaNumeric');
-      }
       else {
         this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');
 
       }
     }, (error) => {
-      this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');
+      if (error.status == 400) {
+        this.toastService.showWarning('Wrong Password', 'Please enter correct password or reset your password');
+      }
+      else{
+        this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');
+      }
 
     });
     // this.router.navigate(['/toast-example']);

@@ -36,15 +36,17 @@ export class SignupComponent implements OnInit {
         this.router.navigate(['/signin']);
         this.toastService.showSuccess('Successful!', 'Sign up successfully');
       }
-      else if(data.status == 400){
-        this.toastService.showWarning('Please choose Another password', 'Password should AlphaNumeric');
-      }
       else {
         this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');
 
       }
     }, (error) => {
-      this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');
+      if(error.status == 400){
+        this.toastService.showWarning('User already registered', 'Use different email id');
+      }
+      else{
+        this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');
+      }
 
     });
   }
