@@ -36,18 +36,19 @@ export class SignupComponent implements OnInit {
         this.router.navigate(['/signin']);
         this.toastService.showSuccess('Successful!', 'Sign up successfully');
       }
-      else if(data.status == 400){
-        this.toastService.showWarning('Please choose Another password', 'Password should AlphaNumeric');
-      }
       else {
         this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');
 
       }
     }, (error) => {
-      this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');
-
+      if (error.error.error && error.error.errorMassage) {
+        this.toastService.showError(error.error.error, error.error.errorMassage);
+      }
+      else {
+        this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');
+      }
     });
   }
-   // this.router.navigate(['/signin']);
+  // this.router.navigate(['/signin']);
 
 }

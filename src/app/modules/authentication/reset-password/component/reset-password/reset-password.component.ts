@@ -43,7 +43,12 @@ export class ResetPasswordComponent implements OnInit {
         this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');
       }
     }, (error) => {
-      this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');
+      if (error.error.error && error.error.errorMassage) {
+        this.toastService.showError(error.error.error, error.error.errorMassage);
+      }
+      else {
+        this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');
+      }
 
     });
   }
@@ -67,7 +72,12 @@ export class ResetPasswordComponent implements OnInit {
         this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');
       }
     }, (error) => {
-      this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');
+      if (error.error.error && error.error.errorMassage) {
+        this.toastService.showError(error.error.error, error.error.errorMassage);
+      }
+      else{
+        this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');
+      }
 
     });
 

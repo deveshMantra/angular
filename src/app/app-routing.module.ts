@@ -39,8 +39,8 @@ const routes: Routes = [
   { path: 'templateDrivenForms', component: TemplateDriveFormsComponent },
   { path: 'reactiveForms', component: ReactiveFormsComponent },
   { path: 'delete', component: TempPractiseDeleteComponent },
-  { path: 'language-translate', component: LanguageTranslationComponent, canActivate: [AuthGuard] },
-  { path: 'toast-example', component: ToastMessageExampleComponent, canActivate: [AuthGuard] },
+  { path: 'language-translate', component: LanguageTranslationComponent },
+  { path: 'toast-example', component: ToastMessageExampleComponent },
   {
     path: 'childRoute', component: ChildRoutesComponent,
     children: [

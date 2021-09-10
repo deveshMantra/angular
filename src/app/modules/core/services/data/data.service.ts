@@ -45,6 +45,15 @@ export class DataService {
         return observableOf(body);
       })); */
   }
+  putWithHeaders(requestParam: any): Observable<any> {
+    const httpOptions: any = {
+      headers: requestParam.header ? this.getHeader(requestParam.header) : this.getHeader(),
+      params: requestParam.param,
+      observe: 'response'
+    };
+    return this.http.put(this.baseUrl + requestParam.url, requestParam.data, httpOptions)
+
+  }
 
   /**
   * for preparing headers
