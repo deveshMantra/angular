@@ -36,6 +36,10 @@ import {ToastrModule } from 'ngx-toastr';
 import { SharedModule} from './modules/shared/shared.module';
 import {CoreModule} from './modules/core/core.module';
 import { ToastMessageExampleComponent } from './practiseModules/toast-message-example/toast-message-example.component';
+import { ChartjsexampleComponent } from './practiseModules/charts/chartjsexample/chartjsexample.component';
+import { ApexchartexampleComponent } from './practiseModules/charts/apexchartexample/apexchartexample.component';
+import {NgApexchartsModule} from 'ng-apexcharts';
+
 
 @NgModule({
   declarations: [
@@ -62,7 +66,9 @@ import { ToastMessageExampleComponent } from './practiseModules/toast-message-ex
     ChildRoutesComponent,
     ChildRComponent,
     LanguageTranslationComponent,
-    ToastMessageExampleComponent
+    ToastMessageExampleComponent,
+    ChartjsexampleComponent,
+    ApexchartexampleComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +81,8 @@ import { ToastMessageExampleComponent } from './practiseModules/toast-message-ex
     ToastrModule.forRoot(),
     TranslateModule.forRoot(),
     SharedModule,
-    CoreModule
+    CoreModule,
+    NgApexchartsModule
 
   ],
   providers: [],

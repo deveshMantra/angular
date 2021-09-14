@@ -20,13 +20,19 @@ import { ToastMessageExampleComponent } from './practiseModules/toast-message-ex
 import { AuthGuard } from './modules/core/guard/auth.guard';
 import { HeaderComponent } from './modules/core/components/header/header.component';
 import { FooterComponent } from './modules/core/components/footer/footer.component';
-import { SideNavBarComponent } from './modules/core/components/side-nav-bar/side-nav-bar.component'
+import { SideNavBarComponent } from './modules/core/components/side-nav-bar/side-nav-bar.component';
+import { ChartjsexampleComponent } from "./practiseModules/charts/chartjsexample/chartjsexample.component";
+import { ApexchartexampleComponent } from './practiseModules/charts/apexchartexample/apexchartexample.component'
 
 
 const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./modules/authentication/authentication.module').then(module => module.AuthenticationModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./modules/dashboard/dashboard.module').then(module => module.DashboardModule)
   },
   { path: 'keyEnter', component: CommunicationComponent },
   { path: 'parentToChildDataBind', component: ParentToChildDataBindComponent },
@@ -50,6 +56,8 @@ const routes: Routes = [
   { path: 'header', component: HeaderComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'sidebar', component: SideNavBarComponent },
+  { path: 'chart/chartjs', component: ChartjsexampleComponent },
+  { path: 'chart/apexchart', component: ApexchartexampleComponent },
 ];
 
 @NgModule({

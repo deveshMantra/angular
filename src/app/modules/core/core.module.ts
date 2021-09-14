@@ -11,8 +11,9 @@ import { SideNavBarComponent } from './components/side-nav-bar/side-nav-bar.comp
   imports: [
     CommonModule
   ],
-  /* exports: [
-    SideNavBarComponent
-  ] */
+  exports: [
+    SideNavBarComponent,
+    HeaderComponent
+  ]
 })
 export class CoreModule { }
