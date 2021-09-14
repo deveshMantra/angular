@@ -27,6 +27,19 @@ import {TempPractiseDeleteComponent} from './practiseModules/temp-practise-delet
 import {ChiltemppractiseDeleteComponent} from './practiseModules/temp-practise-delete/chiltemppractise-delete/chiltemppractise-delete.component';
 import {ChildRoutesComponent} from './practiseModules/child-routes/child-routes.component';
 import {ChildRComponent} from './practiseModules/child-routes/child-r/child-r.component';
+import { LanguageTranslationComponent } from './practiseModules/language-translation/language-translation.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { I18nModule } from './i18n/i18n.module';
+import { TranslateModule } from '@ngx-translate/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ToastrModule } from 'ngx-toastr';
+import { SharedModule} from './modules/shared/shared.module';
+import {CoreModule} from './modules/core/core.module';
+import { ToastMessageExampleComponent } from './practiseModules/toast-message-example/toast-message-example.component';
+import { ChartjsexampleComponent } from './practiseModules/charts/chartjsexample/chartjsexample.component';
+import { ApexchartexampleComponent } from './practiseModules/charts/apexchartexample/apexchartexample.component';
+import {NgApexchartsModule} from 'ng-apexcharts';
+
 
 @NgModule({
   declarations: [
@@ -51,13 +64,26 @@ import {ChildRComponent} from './practiseModules/child-routes/child-r/child-r.co
     TempPractiseDeleteComponent,
     ChiltemppractiseDeleteComponent,
     ChildRoutesComponent,
-    ChildRComponent
+    ChildRComponent,
+    LanguageTranslationComponent,
+    ToastMessageExampleComponent,
+    ChartjsexampleComponent,
+    ApexchartexampleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule,
+    I18nModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    TranslateModule.forRoot(),
+    SharedModule,
+    CoreModule,
+    NgApexchartsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-end align-items-center">
+  <div>
+    <ul class="nav">
+      <li class="nav-item cursor-pointer">
+        <a [class.active] = "switchLanguage == 'en'" class="nav-link" (click)="selectedLanguage('en')" aria-current="page">English</a>
+      </li>
+      <li class="nav-item cursor-pointer">
+        <a [class.active] = "switchLanguage == 'fr'" class="nav-link" (click)="selectedLanguage('fr')">French</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="container">
+  <div>
+    <h1>{{'APP_NAME' | translate}}</h1>
+  </div>
+  <form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">{{'Email address' | translate}}</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">{{'We ll never share your email with anyone else.' | translate}}</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">{{'Password' | translate}}</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">{{'Check me out' | translate}}</label>
+    </div>
+    <button type="submit" class="btn btn-primary">{{'Submit' | translate}}</button>
+  </form>
+
+
+</div>

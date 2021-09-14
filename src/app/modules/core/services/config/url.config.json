@@ -1,0 +1,11 @@
+{
+  "URLS": {
+    "USER": {
+      "SIGNUP": "auth/signup",
+      "SIGNIN": "auth/signin",
+      "RESETPASSWORD": "auth/forget/password",
+      "SETNEWPASSWORD": "auth/forget/password/set/password",
+      "CHANGE_PASSWORD": "auth/reset/password"
+    }
+  }
+}

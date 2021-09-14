@@ -1,0 +1,60 @@
+<nav class="header navbar navbar-expand-lg navbar-light header-blue py-3">
+  <div class="firstbox">
+    <img id="main-logo" src="assets/images/logo.png" alt="" class="logo">
+    <a style="color: #fff; cursor: pointer" (click)="toggleSideNavBar()"><i class="fas fa-bars"></i></a>
+  </div>
+  <div class="ms-auto">
+    <img id="middle-logo" src="assets/images/logo.png" alt="" class="logo">
+  </div>
+
+
+  <div class="ms-auto">
+    <a class="navbar-toggler" href="javascript:" (click)="toggleMobOption()"><i class="fas fa-ellipsis-v"></i></a>
+  </div>
+  <div class="collapse navbar-collapse" [style.display]="this.collapseStyle">
+    <div class="search ms-2">
+      <a>
+        <i class="fas fa-search"></i>
+      </a>
+    </div>
+    <div class="ms-auto">
+      <div class="profile-info">
+        <a>
+          <i class="far fa-bell"></i>
+        </a>
+        <a>
+          <i class="far fa-envelope"></i>
+        </a>
+        <div class="dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <img src="assets/images/meghan.png" width="40px" alt="">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <div class="profile-card d-flex justify-content-between align-items-center bg-primary p-3">
+              <div class="d-flex justify-content-between align-items-center text-align-center">
+                <a class="me-3">
+                  <img src="assets/images/meghan.png" width="40px" alt="">
+                </a>
+                <a>Mitchel</a>
+              </div>
+              <div>
+                <a>
+                  <i class="fas fa-sign-out-alt"></i>
+                </a>
+              </div>
+            </div>
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<app-side-nav-bar [toggle]="sideNavCollapse"></app-side-nav-bar>
+
