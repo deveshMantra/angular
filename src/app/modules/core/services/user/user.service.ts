@@ -8,10 +8,11 @@ import { DataService } from '../data/data.service';
   providedIn: 'root'
 })
 export class UserService {
+  token: any;
 
   constructor(private configService: ConfigService
     , private dataService: DataService) {
-
+      this.token=JSON.parse(localStorage.getItem('userData')).token
   }
   /**
    * Creates user
@@ -54,5 +55,14 @@ export class UserService {
     };
     console.log("In create user service To set new Password", request);
     return this.dataService.postWithHeaders(request);
+  }
+   async changePassword(requestBody) {
+    const request = {
+      url: this.configService.urlConfig.default.URLS.USER.CHANGE_PASSWORD,
+      data: requestBody,
+      header:{Authorization:this.token},
+      };
+    console.log("In create user service To set new Password", request);
+    return this.dataService.putWithHeaders(request);
   }
 }

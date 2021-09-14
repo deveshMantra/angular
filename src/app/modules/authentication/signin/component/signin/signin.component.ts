@@ -30,22 +30,21 @@ export class SigninComponent implements OnInit {
     (await this.userService.signIn(requestBody)).subscribe(async data => {
       console.log("After sign in user", data);
       if (data.status == 200) {
+        localStorage.setItem("userData", JSON.stringify(data.body));
         this.toastService.showSuccess('Successful!', 'Sign in successfully');
-      }
-      else {
+        this.router.navigate(['/password/change'])
+      } else {
         this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');
-
       }
     }, (error) => {
-      if (error.status == 400) {
-        this.toastService.showWarning('Wrong Password', 'Please enter correct password or reset your password');
+      if (error.error.error && error.error.errorMassage) {
+        this.toastService.showError(error.error.error, error.error.errorMassage);
       }
-      else{
+      else {
         this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');
       }
 
     });
-    // this.router.navigate(['/toast-example']);
 
   }
 

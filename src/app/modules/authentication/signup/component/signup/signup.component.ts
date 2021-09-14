@@ -41,15 +41,14 @@ export class SignupComponent implements OnInit {
 
       }
     }, (error) => {
-      if(error.status == 400){
-        this.toastService.showWarning('User already registered', 'Use different email id');
+      if (error.error.error && error.error.errorMassage) {
+        this.toastService.showError(error.error.error, error.error.errorMassage);
       }
-      else{
+      else {
         this.toastService.showError('Something went wrong', 'Try after sometime time or check your internet connection');
       }
-
     });
   }
-   // this.router.navigate(['/signin']);
+  // this.router.navigate(['/signin']);
 
 }

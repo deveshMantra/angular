@@ -144,5 +144,8 @@
       }
     }
   },
-  "defaultProject": "angularLearnings"
+  "defaultProject": "angularLearnings",
+  "cli": {
+    "analytics": false
+  }
 }
